@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+@model Login
+<head>
+        <style>
+            * {
+                margin: 10px;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+            img{
+                width: 5%;
+            }
+            div{
+                display: inline-block;
+                width: 62%;
+                vertical-align: top;
+                border: gray solid;
+            }
+        </style>
+</head>
+    
+    <body>
+        <div>
+        <h1><u>Login</u></h1>
+            @if(TempData["Error"] != null){
+                <p>Invalid Login Information</p>
+                }
+            <form asp-action="Login" asp-controller="User" method="post">
+                <p>Email: </p>
+                <span asp-validation-for="Email"></span>
+                <input asp-for="Email">
+                <p>Password: </p>
+                <span asp-validation-for="Password"></span>
+                <input asp-for="Password">
+                <input type="submit" value="Login">
+            </form>
+        </div>
+        <h4><a href="/">Need to make an account? Register!</a></h4>
+    </body>

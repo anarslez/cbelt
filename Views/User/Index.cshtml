@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+@model User
+<head>
+        <style>
+            * {
+                margin: 10px;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+            img{
+                width: 5%;
+            }
+            div{
+                display: inline-block;
+                width: 62%;
+                vertical-align: top;
+                border: gray solid;
+            }
+        </style>
+</head>
+    
+    <body>
+        <div>
+        <h1><u>Register</u></h1>
+            @if(TempData["Error"] != null){
+                <p>Invalid Registration Information Please Call 555-6969</p>
+                }
+            <form asp-action="Add" asp-controller="User" method="post">
+                <p>First Name: </p>
+                <span asp-validation-for="FirstName"></span>
+                <input asp-for="FirstName">
+                <p>Last Name: </p>
+                <span asp-validation-for="LastName"></span>
+                <input asp-for="LastName">
+                <p>Email: </p>
+                <span asp-validation-for="Email"></span>
+                <input asp-for="Email">
+                <p>Password: </p>
+                <span asp-validation-for="Password"></span>
+                <input asp-for="Password">
+                <p>Confirm Password: </p>
+                <span asp-validation-for="ConPassword"></span>
+                <input asp-for="ConPassword">
+                <input type="submit" value="Register">
+            </form>
+        </div>
+        <h4><a href="/loginpage">Already have an account? Login!</a></h4>
+    </body>

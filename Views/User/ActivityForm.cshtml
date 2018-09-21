@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+@model Activity
+<head>
+        <style>
+            * {
+                margin: 10px;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+            img{
+                width: 5%;
+            }
+            div{
+                display: inline-block;
+                width: 72%;
+                vertical-align: top;
+                border: gray solid;
+            }
+            h1{
+                width: 50%;
+                display: inline-block;
+            }
+            a{
+                width: 10%;
+                display: inline-block;
+            }
+        </style>
+</head>
+    
+    <body>
+        <h1>Activity Center!!!</h1>
+    <a href="/show">Go Back!!!</a><a href="/">Logout!!!</a>
+        <br>
+        <div>
+        <h3><u>Add Activity</u></h3>
+            <form asp-action="AddActivity" asp-controller="User" method="post">
+                <p>Title: </p>
+                <span asp-validation-for="Title"></span>
+                <input asp-for="Title">
+                <p>Date and Time: </p>
+                <span asp-validation-for="Date"></span>
+                <input asp-for="Date" type="datetime-local">
+                <p>Duration: </p>
+                <span asp-validation-for="Duration"></span>
+                <input asp-for="Duration">
+                <span asp-validation-for="Units"></span>
+                <select name = "Units">
+                    <option value="Minutes">Minutes</option>
+                    <option value="Hours">Hours</option>
+                    <option value="Days">Days</option>
+                </select>
+                <p>Description: </p>
+                <span asp-validation-for="Description"></span>
+                <textarea asp-for="Description"></textarea>
+                <input type="submit" value="Create Activity">
+            </form>
+        </div>
+    </body>

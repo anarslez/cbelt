@@ -1,0 +1,11 @@
+C:\Users\anars\OneDrive\Desktop\CodingDojo\C#\belt\bin\Debug\netcoreapp2.0\belt.deps.json
+C:\Users\anars\OneDrive\Desktop\CodingDojo\C#\belt\bin\Debug\netcoreapp2.0\belt.runtimeconfig.json
+C:\Users\anars\OneDrive\Desktop\CodingDojo\C#\belt\bin\Debug\netcoreapp2.0\belt.runtimeconfig.dev.json
+C:\Users\anars\OneDrive\Desktop\CodingDojo\C#\belt\bin\Debug\netcoreapp2.0\belt.dll
+C:\Users\anars\OneDrive\Desktop\CodingDojo\C#\belt\bin\Debug\netcoreapp2.0\belt.pdb
+C:\Users\anars\OneDrive\Desktop\CodingDojo\C#\belt\obj\Debug\netcoreapp2.0\belt.csprojResolveAssemblyReference.cache
+C:\Users\anars\OneDrive\Desktop\CodingDojo\C#\belt\obj\Debug\netcoreapp2.0\belt.csproj.CoreCompileInputs.cache
+C:\Users\anars\OneDrive\Desktop\CodingDojo\C#\belt\obj\Debug\netcoreapp2.0\belt.AssemblyInfoInputs.cache
+C:\Users\anars\OneDrive\Desktop\CodingDojo\C#\belt\obj\Debug\netcoreapp2.0\belt.AssemblyInfo.cs
+C:\Users\anars\OneDrive\Desktop\CodingDojo\C#\belt\obj\Debug\netcoreapp2.0\belt.dll
+C:\Users\anars\OneDrive\Desktop\CodingDojo\C#\belt\obj\Debug\netcoreapp2.0\belt.pdb

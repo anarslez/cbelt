@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<head>
+        <style>
+            * {
+                margin: 10px;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+            table{
+                border-collapse: collapse;
+            }
+            table, th, td{
+                padding: 10px;
+                border: solid black;
+            }
+            div{
+                display: inline-block;
+                width: 42%;
+                vertical-align: top;
+            }
+        </style>
+</head>
+<body>
+    <h1>Activity Center!!!</h1>
+    <h4>Welcome @ViewBag.User.FirstName!! 
+    </h4>
+    @if(TempData["Error"]!=null){
+        <p>@TempData["Error"]</p>
+    }
+    <table>
+        <tr>
+            <th>Activity</th>
+            <th>Date and Time</th>
+            <th>Duration</th>
+            <th>Coordinator</th>
+            <th>Participants</th>
+            <th>Action</th>
+        </tr>
+    @{
+        foreach(var wed in @ViewBag.AllActivities)
+        {
+            <tr>
+                <td><a href="/activity/@wed.ActivityId">@wed.Title</a></td>
+                <td>@wed.Date</td>
+                <td>@wed.Duration @wed.Units</td>
+                <td>@wed.User.FirstName</td>
+                <td>@wed.Joins.Count</td>
+                @if(wed.UserId == ViewBag.User.UserId)
+                {
+                    <td><a href="/delete/@wed.ActivityId">Delete</a></td>
+                }
+                else{
+                if(@wed.Joins.Count != 0){
+                    int walk = 0;
+                    foreach(var res in @wed.Joins){
+                        if(@res.User.UserId == ViewBag.User.UserId){
+                            walk = 1;  
+                        }
+                    }
+                    if(@walk == 1){
+                        <td><a href="/decline/@wed.ActivityId">UnJoin</a></td>
+                    }
+                    else{
+                        <td><a href="/join/@wed.ActivityId">Join</a></td>
+                    }
+                }
+                else{
+                    <td><a href="/join/@wed.ActivityId">Join</a></td>
+                }    
+            }
+            </tr>
+    }
+    }
+    </table>
+    <br>
+    <h3><a href="/addactivity">Add an Activity!</a></h3>
+    <br>
+    <h3><a href="/">Logout!</a></h3>
+</body>

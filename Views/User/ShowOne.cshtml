@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<head>
+        <style>
+            * {
+                margin: 10px;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+            table{
+                border-collapse: collapse;
+            }
+            table, th, td{
+                padding: 10px;
+                border: solid black;
+            }
+            h1{
+                width: 50%;
+                display: inline-block;
+            }
+            a{
+                width: 10%;
+                display: inline-block;
+            }
+        </style>
+</head>
+<body>
+    <h1>Activity Center!!!</h1>
+    <a href="/show">Go Back!!!</a><a href="/">Logout!!!</a>
+    <h2>
+        @ViewBag.OneActivity.Title
+    </h2>
+    @{
+        int count = 0;
+        foreach(var i in @ViewBag.AllJoins){
+            if(@i.UserId == @ViewBag.UserId && @i.ActivityId == @ViewBag.OneActivity.ActivityId){
+                count = 1;
+            }
+        }
+        if(count == 0 && @ViewBag.OneActivity.User.UserId != @ViewBag.UserId){
+            <a href="/join/@ViewBag.OneActivity.ActivityId">Join</a>
+        }
+    }
+    <div>
+    <h3><u>Event Coordinator:</u>
+        @ViewBag.OneActivity.User.FirstName
+    </h3>
+    <h3><u>Description:</u>
+        @ViewBag.OneActivity.Description
+    </h3>
+    <h3><u>Participants:</u>
+    </h3>
+    @{
+        foreach(var i in @ViewBag.OneActivity.Joins){
+            <div>
+            <h4>@i.User.FirstName</h4>
+            </div>
+        }
+    }
+    </div>
+</body>
